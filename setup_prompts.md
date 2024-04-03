@@ -38,7 +38,13 @@ By "position index" we express the relationship between array indices and positi
 
 Thus in the example board above the 2 and 4 tiles are at index 2 and 5.
 
-Note that we use log representations for things like CSS class names.
+Our representation uses the log of the tile value in the array, for example here is our sample board above:
+
+```js
+[0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0]
+```
+
+We also use this log representations for things like CSS class names.
 So "tile-1" means the tile with value 2^1, and "tile-17" is the highest-valued tile possible in the game.
 This keeps our CSS and HTML a bit shorter and we only print the big numbers where necessary.
 
@@ -63,18 +69,20 @@ Output: see index.html
 
 ## CSS prompt
 
-We are writing 2048 in pure HTML and JS.
-
 Here we will be writing the CSS.
 
-Our goal is to reproduce the look and feel of the original 2048 by Cerulli exactly.
+Our goal is to reproduce the look and feel of the original 2048 by Cerulli in the tiles and the board.
+
+Use #bbada0 for the page background, #776e65 for the h1 color, 
+
+Write all CSS on single lines in the form "selector { rule ; rule }" with all rules for a selector on a single line, separated by semicolon, and with no semicolon after the last rule before the closing curly brace.
 
 Notes:
 
 - Empty tiles and div#game should have different colors.
 - Give the h1 a nice harmonious color.
-- We can use flexbox layout.
-- The text should be #81a8b5 for the 2 and 4 tiles, and #f9f6f2 for all higher ones.
+- We use grid for the 4-by-4 game layout.
+- The text should be #81a8b5 for the 2 and 4 tiles, and #f9f6f2 for all others. (set the default color on the .tile class and then only special case -1 and -2).
 - background colors for the tiles:
 
 ```
