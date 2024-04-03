@@ -23,3 +23,24 @@ function setup_game() {
 
 In board() we get our game representation and return an HTML string containing div#game.
 */
+
+function board(arr) {
+  const tiles = arr.map(val => `<div class="tile ${val ? `tile-${val}` : 'tile-empty'}">${val ? 2 ** val : ''}</div>`).join('');
+  return `<div id=game>${tiles}</div>`;
+}
+
+/* game state
+
+Here we call setup_game and put the game state in a global variable.
+
+We call board() and update the inner HTML of div#game.
+
+(We are brought in by a script tag at the end of the body, so the div is already there.)
+
+For now we don't do anything but load the initial game state; later we'll add input handling here.
+*/
+
+let gameState = setup_game();
+
+document.getElementById('game').innerHTML = board(gameState);
+
