@@ -74,12 +74,12 @@ Notes:
 - Empty tiles and div#game should have different colors.
 - Give the h1 a nice harmonious color.
 - We can use flexbox layout.
-
+- The text should be #81a8b5 for the 2 and 4 tiles, and #f9f6f2 for all higher ones.
 - background colors for the tiles:
 
 ```
 empty: #cdc1b4
-tiles 1 through 17:
+tiles 1 through 11:
 #eee4da
 #ede0c8
 #f2b179
@@ -91,12 +91,7 @@ tiles 1 through 17:
 #edc850
 #edc53f
 #edc22e
-#3c3a32
-#3c3a32
-#3c3a32
-#3c3a32
-#3c3a32
-#3c3a32
+12--17: #3c3a32
 ```
 
 - font-sizes:
