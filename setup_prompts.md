@@ -1,17 +1,80 @@
 # setup prompts (HTML and CSS)
 
-1. overview
-2. board layout
-3. play implementation
-4. input handling
+## "bootstrap" block
 
-1. static board
-2. new index.html, board() and start_game()
-3. handle_move() and add_tile()
-4. keyboard input and state management
-5. we're done, here's where you can go see the code on github
-6. one more thing, here's the Python and C versions
-7. conclusions (bullet points up on screen)
+We are writing a 2048 game in pure HTML and JS.
+
+Our game board HTML will look like this:
+
+```html
+<div id=game>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-1'>2</div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-2'>4</div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+<div class="tile tile-empty"></div>
+</div>
+```
+
+By "position index" we express the relationship between array indices and positions that we illustrate thusly:
+
+ 0  1  2  3
+ 4  5  6  7
+ 8  9 10 11
+12 13 14 15
+
+Thus in the example board above the 2 and 4 tiles are at index 2 and 5.
+
+Note that we use log representations for things like CSS class names.
+So "tile-1" means the tile with value 2^1, and "tile-17" is the highest-valued tile possible in the game.
+This keeps our CSS and HTML a bit shorter and we only print the big numbers where necessary.
+
+## index.html
+
+Prompt:
+
+
+Write the index.html page for our game with:
+
+- the html5 doctype all in lowercase
+- title just 2048
+- stylesheet is "2048.css"
+- h1 just "2048"
+- div#game, initially empty
+- javascript is "2048.js"; the script tag comes after the div
+- nothing else
+
+Output: see index.html
+
+## CSS prompt
+
+We are writing 2048 in pure HTML and JS.
+
+Here we will be writing the CSS.
+
+Our goal is to reproduce the look and feel of the original 2048 by Cerulli exactly.
+
+Notes:
+
+- Empty tiles and div#game should have different colors.
+- Give the h1 a nice harmonious color.
+- We can use flexbox layout.
+
+
+## new index, board() and start_game()
+
+```
 
 ## static board first pass
 
@@ -46,33 +109,3 @@ CSS notes:
 
 ```
 
-## index.html
-
-Prompt:
-
-We are writing a 2048 game in pure HTML and JS.
-
-Write the index.html page for our game with:
-
-- the html5 doctype all in lowercase
-- title just 2048
-- stylesheet is "2048.css"
-- h1 just "2048"
-- div#game, initially empty
-- javascript is "2048.js"; the script tag comes after the div
-- nothing else
-
-Output: see index.html
-
-```html
-```
-
-## "bootstrap" block
-
-decisions blah blah blah
-...
-
-
-## new index, board() and start_game()
-
-```
