@@ -1,1 +1,1 @@
-/* js will go here */
+/* In setup_game ... */

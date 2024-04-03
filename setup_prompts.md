@@ -29,10 +29,12 @@ Our game board HTML will look like this:
 
 By "position index" we express the relationship between array indices and positions that we illustrate thusly:
 
+```
  0  1  2  3
  4  5  6  7
  8  9 10 11
 12 13 14 15
+```
 
 Thus in the example board above the 2 and 4 tiles are at index 2 and 5.
 
