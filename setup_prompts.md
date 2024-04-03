@@ -42,6 +42,8 @@ Note that we use log representations for things like CSS class names.
 So "tile-1" means the tile with value 2^1, and "tile-17" is the highest-valued tile possible in the game.
 This keeps our CSS and HTML a bit shorter and we only print the big numbers where necessary.
 
+Reply with "OK".
+
 ## index.html
 
 Prompt:
@@ -73,6 +75,36 @@ Notes:
 - Give the h1 a nice harmonious color.
 - We can use flexbox layout.
 
+- background colors for the tiles:
+
+```
+empty: #cdc1b4
+tiles 1 through 17:
+#eee4da
+#ede0c8
+#f2b179
+#f59563
+#f67c5f
+#f65e3b
+#edcf72
+#edcc61
+#edc850
+#edc53f
+#edc22e
+#3c3a32
+#3c3a32
+#3c3a32
+#3c3a32
+#3c3a32
+#3c3a32
+```
+
+- font-sizes:
+
+- 1--9: 55px
+- 10--13: 45px
+- 14--16: 36px
+- 17: 30px
 
 ## new index, board() and start_game()
 
