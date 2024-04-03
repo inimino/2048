@@ -10,10 +10,10 @@ Our game board HTML will look like this:
 <div id=game>
 <div class="tile tile-empty"></div>
 <div class="tile tile-empty"></div>
-<div class="tile tile-1'>2</div>
+<div class="tile tile-1">2</div>
 <div class="tile tile-empty"></div>
 <div class="tile tile-empty"></div>
-<div class="tile tile-2'>4</div>
+<div class="tile tile-2">4</div>
 <div class="tile tile-empty"></div>
 <div class="tile tile-empty"></div>
 <div class="tile tile-empty"></div>
@@ -48,10 +48,13 @@ We also use this log representations for things like CSS class names.
 So "tile-1" means the tile with value 2^1, and "tile-17" is the highest-valued tile possible in the game.
 This keeps our CSS and HTML a bit shorter and we only print the big numbers where necessary.
 
+To communicate between the input layer and game mechanics, we use "u", "d", "l", "r" to identify the moves that the player can make in the game.
+
 Code we already have:
 
 - setup_game - returns initial random game representation
 - board - takes game representation into HTML string
+- game_update - takes game representation and move into new representation
 
 Reply with "OK".
 
@@ -85,7 +88,7 @@ Write all CSS on single lines in the form "selector { rule ; rule }" with all ru
 Notes:
 
 - Empty tiles and div#game should have different colors.
-- Give the h1 a nice harmonious color and center it.
+- Give the h1 a nice harmonious color and center it; 20px vertical margins and font-size 60px works well.
 - We can use flexbox on the body for the basic layout and centering.
 - We use grid for the 4-by-4 #game layout, with repeat (4, 1fr) / repeat (4, 1fr).
 - The div#game should be 500px square.
