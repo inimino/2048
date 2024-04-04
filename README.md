@@ -38,6 +38,8 @@ CSS notes:
 - We can use flexbox layout.
 ```
 
+You can paste this prompt into ChatGPT yourself and get a static HTML page with a reasonable-looking 2048, though it won't be perfect yet.
+
 ## First upgrade: the "bootstrap" prompt
 
 We start the conversation with a "bootstrap" prompt that contains all the key decisions we've already made in one place.
@@ -106,7 +108,11 @@ Code structure and function names:
 Reply with "OK".
 ````
 
+The bootstrap prompt records all our persistent decisions that are relevant across the entire codebase, and it persists in our codebase from day to day, so every time we start a new session with the LLM, we aren't starting from scratch; the LLM always has all the relevant information and is always ready to go.
+
 ## index.html prompt
+
+Now we provide our real prompt below the bootstrap prompt, and we are always specific about what we really want, for example:
 
 Prompt:
 
@@ -125,6 +131,14 @@ Write the index.html page for our game with:
 Output: see index.html
 
 ## CSS prompt
+
+Eventually we get longer prompts, like this one for our CSS.
+We are as specific as we need to be.
+In this case, we started by letting the LLM pick some of the colors, but once those decisions were made we copied them back into the English description.
+Even though we initially didn't care to pick the colors, once they have been picked and we like them, we don't want them to randomly change so we document it.
+Here we're starting to see the "English as code" idea.
+
+Prompt:
 
 ````
 Here we will be writing the CSS.
@@ -166,3 +180,12 @@ tiles 1 through 11:
 - 14--16: 36px
 - 17: 30px
 ````
+
+## Moving on: Blocks
+
+Here we might start to want some tooling; all this manual copying and pasting is tedious.
+
+Here's where we introduce [cmpr](https://github.com/inimino/cmpr).
+The rest of the code is in 2048.js and is organized in "blocks".
+
+Check out cmpr or the demo video for more.
