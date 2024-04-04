@@ -22,11 +22,12 @@ function setup_game() {
 /* board()
 
 In board() we get our game representation and return an HTML string containing div#game.
+
+We only return the contents of the div (i.e. the inner HTML), which is just the 16 div tiles.
 */
 
 function board(arr) {
-  const tiles = arr.map(val => `<div class="tile ${val ? `tile-${val}` : 'tile-empty'}">${val ? 2 ** val : ''}</div>`).join('');
-  return `<div id=game>${tiles}</div>`;
+  return arr.map(val => `<div class="tile ${val ? `tile-${val}` : 'tile-empty'}">${val ? 2 ** val : ''}</div>`).join('');
 }
 
 /* #game_update
