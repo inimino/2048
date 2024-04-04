@@ -4,7 +4,6 @@ In setup_game we initialize and return the game structure, which is just an arra
 There are two random tiles in the initial game state.
 
 First we select two random distinct indices for the tiles, and then for each we pick a 2 with probability .9 or a 4 with probability .1.
-
 */
 
 function setup_game() {

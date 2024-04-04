@@ -129,17 +129,16 @@ Output: see index.html
 ````
 Here we will be writing the CSS.
 
-Use #bbada0 for the page background, #776e65 for the h1 color.
-
 Write all CSS on single lines in the form "selector { rule ; rule }" with all rules for a selector on a single line, separated by semicolon, and with no semicolon after the last rule before the closing curly brace.
 
 Notes:
 
 - We can use flexbox on the body (with column direction) for the basic layout and centering.
-- Give the h1 a nice harmonious color and center it; give it some vertical space; 60px font looks nice.
+- Use #bbada0 for the page background, #776e65 for the h1 color.
+- Center the h1 and give it some vertical space; a 60px font looks nice.
 - We use grid for the 4-by-4 #game layout, with repeat (4, 1fr) / repeat (4, 1fr).
 - The div#game should be 500px square.
-- Give us a nice spacing around the #game itself and center it horizontally.
+- Give us a nice vertical spacing around the #game itself and center it horizontally.
 - The text should be #81a8b5 for the 2 and 4 tiles, and #f9f6f2 for all others. (set the default color on the .tile class and then only special case -1 and -2).
 - background colors for the tiles:
 
