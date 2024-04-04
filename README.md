@@ -129,17 +129,14 @@ Output: see index.html
 ````
 Here we will be writing the CSS.
 
-Our goal is to reproduce the look and feel of the original 2048 by Cerulli in the tiles and the board.
-
 Use #bbada0 for the page background, #776e65 for the h1 color.
 
 Write all CSS on single lines in the form "selector { rule ; rule }" with all rules for a selector on a single line, separated by semicolon, and with no semicolon after the last rule before the closing curly brace.
 
 Notes:
 
-- Empty tiles and div#game should have different colors.
-- Give the h1 a nice harmonious color and center it; 20px vertical margins and font-size 60px works well.
-- We can use flexbox on the body for the basic layout and centering.
+- We can use flexbox on the body (with column direction) for the basic layout and centering.
+- Give the h1 a nice harmonious color and center it; give it some vertical space; 60px font looks nice.
 - We use grid for the 4-by-4 #game layout, with repeat (4, 1fr) / repeat (4, 1fr).
 - The div#game should be 500px square.
 - Give us a nice spacing around the #game itself and center it horizontally.
