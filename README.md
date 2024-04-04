@@ -95,19 +95,22 @@ This keeps our CSS and HTML a bit shorter and we only print the big numbers wher
 
 To communicate between the input layer and game implementation, we use "u", "d", "l", "r" to identify the moves that the player can make in the game.
 
-Code we already have:
+Code structure and function names:
 
 - setup_game - returns initial random game representation
 - board - takes game representation into HTML string
 - game_update - takes game representation and move into new representation
+- handle_move_4cell - helper for game_update, handles a row/col vector of 4
+- add_new_tile - helper for game_update, handles adding a new tile
 
 Reply with "OK".
 ````
 
-## First index.html
+## index.html prompt
 
 Prompt:
 
+```
 Write the index.html page for our game with:
 
 - the html5 doctype all in lowercase
@@ -117,11 +120,13 @@ Write the index.html page for our game with:
 - div#game, initially empty
 - javascript is "2048.js"; the script tag comes after the div
 - nothing else
+```
 
 Output: see index.html
 
 ## CSS prompt
 
+````
 Here we will be writing the CSS.
 
 Our goal is to reproduce the look and feel of the original 2048 by Cerulli in the tiles and the board.
@@ -164,3 +169,4 @@ tiles 1 through 11:
 - 10--13: 45px
 - 14--16: 36px
 - 17: 30px
+````
