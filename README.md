@@ -37,6 +37,7 @@ CSS notes:
 
 ## "bootstrap" block
 
+````
 We are writing a 2048 game in pure HTML and JS.
 
 Our game board HTML will look like this:
@@ -92,6 +93,7 @@ Code we already have:
 - game_update - takes game representation and move into new representation
 
 Reply with "OK".
+````
 
 ## First index.html
 
