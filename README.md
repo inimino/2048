@@ -11,22 +11,25 @@ Here's the prompt:
 ```
 We are writing 2048 in pure HTML and JS.
 
-Write an HTML page which contains just CSS, inline in a style element, followed by an HTML div#game.
+Write an HTML page which contains just the following:
+
 - title "2048"
 - a style element of inline CSS
 - a div#game
 
-This div will contain the 16 squares of a starting position, with a 2 and a 4 tile placed somewhere, and the rest as blank squares.
+This div will contain the 16 squares of a starting position, with a 2 and a 4 tile placed somewhere, and the rest as empty tiles.
 
-Our goal is to reproduce the look and feel of the original 2048 by Cerulli exactly.
+We want to use the exact some colors as original 2048 by Cerulli.
 
 Our 2 tile will be at position index 2 and our 4 tile at index 5.
-By "position index" we express the relationship between array indices and positions that we illustrate thusly:
+By "position index" we express the relationship between array indices and positions illustrated in this grid:
 
  0  1  2  3
  4  5  6  7
  8  9 10 11
-12 13 14 15
+ 12 13 14 15
+
+(Later we'll be using an array of ints to represent game state using this same layout.)
 
 CSS notes:
 
@@ -35,7 +38,12 @@ CSS notes:
 - We can use flexbox layout.
 ```
 
-## "bootstrap" block
+## First upgrade: the "bootstrap" prompt
+
+We start the conversation with a "bootstrap" prompt that contains all the key decisions we've already made in one place.
+
+Then in our second prompt, we'll be asking GPT4 to write specific code, such as a particular function.
+When this results in decisions that apply to the entire project, we can move those into the bootstrap prompt.
 
 ````
 We are writing a 2048 game in pure HTML and JS.
@@ -63,7 +71,14 @@ Our game board HTML will look like this:
 </div>
 ```
 
-By "position index" we express the relationship between array indices and positions that we illustrate thusly:
+Our game state representation uses a simple array of 16 integers.
+We'll use the log of the tile value, for example here is our sample board above:
+
+```js
+[0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0]
+```
+
+We can illustrate the relationship between array indices and positions by the following grid:
 
 ```
  0  1  2  3
@@ -74,17 +89,11 @@ By "position index" we express the relationship between array indices and positi
 
 Thus in the example board above the 2 and 4 tiles are at index 2 and 5.
 
-Our representation uses the log of the tile value in the array, for example here is our sample board above:
-
-```js
-[0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0]
-```
-
 We also use this log representations for things like CSS class names.
 So "tile-1" means the tile with value 2^1, and "tile-17" is the highest-valued tile possible in the game.
 This keeps our CSS and HTML a bit shorter and we only print the big numbers where necessary.
 
-To communicate between the input layer and game mechanics, we use "u", "d", "l", "r" to identify the moves that the player can make in the game.
+To communicate between the input layer and game implementation, we use "u", "d", "l", "r" to identify the moves that the player can make in the game.
 
 Code we already have:
 
