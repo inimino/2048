@@ -20,7 +20,9 @@ Write me a complete, finished, playable 2048 in one self-contained HTML page.
 You can see the results [here](https://inimino.github.io/2048/oneshot.html).
 Spoiler alert: it doesn't work.
 
-## First pass: static board
+## First real try: static board
+
+If I'm programming this myself, I'll start with a static HTML page containing a simple demo board, and make sure my HTML and CSS look good before moving on to actually making the game playable by adding JS, so let's get GPT to try that starting point.
 
 Here's the prompt:
 
