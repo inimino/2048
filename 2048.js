@@ -1,5 +1,5 @@
 /*
-In setup_game we initialize and return the game structure, which is just an array of 16 ints.
+In setup_game we initialize and return the game state for a new game.
 
 There are two random tiles in the initial game state.
 
@@ -47,13 +47,12 @@ When we merge, since our board stores exponents (i.e. an 8 tile is stored as 3) 
 
 We can see that, for example, if the move is "d", we will call handle_move_4cell() with the array values from the board at indices [12 8 4 0], [13 9 5 1], and so on for all four columns.
 
-We copy the grid given above into the comment and directly read out the indices into a 4-array for each of the directions as this is the easiest and cleanest and most fool-proof way to write the code.
+Instead of doing arithmetic with rows and cols, we just directly include a nested structure of ints between 0 and 15 that maps each of the four moves onto the correct indices, as this is the easiest and cleanest way to write the code.
 
 We handle all four directions analogously.
 
 Below we just write handle_move_4cell and game_update.
 At the end of game_update we call add_new_tile, which we write in the next block, which takes the old and new array and returns the next game state.
-It needs both the old and the new because it needs to know whether the move was a no-op, as in this case no new square will be added.
 This function takes the board position and adds empty tiles, and it also handles detecting when the game is over.
 */
 

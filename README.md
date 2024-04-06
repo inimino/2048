@@ -4,6 +4,20 @@ This is a 2048 implementation written using ChatGPT4 and [cmpr](https://github.c
 
 There's a video walkthrough you can follow to build your own 2048 with the same approach.
 
+## Wildly optimistic first try.
+
+2048 was wildly popular and the original code was open source, right?
+GPT4 must have seen a million 2048 implementations in its training set, maybe we can just ask it to write one.
+
+Prompt:
+
+```
+Write me a complete, finished, playable 2048 in one self-contained HTML page.
+```
+
+You can see the results [here](https://inimino.github.io/2048/oneshot.html).
+Spoiler alert: it doesn't work.
+
 ## First pass: static board
 
 Here's the prompt:
@@ -42,9 +56,19 @@ You can paste this prompt into ChatGPT yourself and get a static HTML page with 
 
 ## First upgrade: the "bootstrap" prompt
 
-We start the conversation with a "bootstrap" prompt that contains all the key decisions we've already made in one place.
+Getting GPT4 to write all the CSS and HTML in one prompt is a challenge.
+If we add JS to the mix, it's simply not going to work.
+We need to break apart our single monolithic HTML page into multiple prompts.
+We may as well split the CSS and JS into separate files at the same time.
+
+Now we are going to communicate with the LLM about one single small part of the program at a time: either a short HTML snippet, or a small CSS file, or a single JavaScript function.
+
+However, not all important decisions are local to such a short context, so we want to provide the model with key background information before asking for what we specifically want.
+
+So we'll start the conversation with a "bootstrap" prompt that contains all the key decisions we've already made in one place.
 
 Then in our second prompt, we'll be asking GPT4 to write specific code, such as a particular function.
+When we or GPT make choices that we (such as picking a color that we decide to keep) then we move those choices into the comment, so the comment records choices we've made.
 When this results in decisions that apply to the entire project, we can move those into the bootstrap prompt.
 
 ````
@@ -97,7 +121,7 @@ This keeps our CSS and HTML a bit shorter and we only print the big numbers wher
 
 To communicate between the input layer and game implementation, we use "u", "d", "l", "r" to identify the moves that the player can make in the game.
 
-Code structure and function names:
+Code we already have:
 
 - setup_game - returns initial random game representation
 - board - takes game representation into HTML string
