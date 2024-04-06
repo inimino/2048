@@ -2,6 +2,8 @@
 
 This is a 2048 implementation written using ChatGPT4 and [cmpr](https://github.com/inimino/cmpr).
 
+You can play the finished result [here](https://inimino.github.io/2048/).
+
 There's a video walkthrough you can follow to build your own 2048 with the same approach.
 
 ## Wildly optimistic first try.
