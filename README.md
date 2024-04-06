@@ -54,6 +54,9 @@ CSS notes:
 
 You can paste this prompt into ChatGPT yourself and get a static HTML page with a reasonable-looking 2048, though it won't be perfect yet.
 
+I iterated on this prompt a bit and [here](https://inimino.github.io/2048/static-1.html) [are](https://inimino.github.io/2048/static-2.html) [some](https://inimino.github.io/2048/static-3.html) [tries](https://inimino.github.io/2048/static-4.html).
+Usually when you fix one thing, something else goes wrong.
+
 ## First upgrade: the "bootstrap" prompt
 
 Getting GPT4 to write all the CSS and HTML in one prompt is a challenge.
@@ -156,11 +159,11 @@ Output: see index.html
 
 ## CSS prompt
 
-Eventually we get longer prompts, like this one for our CSS.
-We are as specific as we need to be.
-In this case, we started by letting the LLM pick some of the colors, but once those decisions were made we copied them back into the English description.
-Even though we initially didn't care to pick the colors, once they have been picked and we like them, we don't want them to randomly change so we document it.
-Here we're starting to see the "English as code" idea.
+This is an example of a longer prompt.
+We can be as specific as we need to be.
+If we like a decision, we can "lift" it from the code into the comment, so that it gets preserved.
+Here for example, we started by letting the LLM pick some of the colors.
+Even though we initially didn't care to pick the colors, once they have been picked and we like them, we don't want them to randomly change, so we make it part of the specification.
 
 Prompt:
 
